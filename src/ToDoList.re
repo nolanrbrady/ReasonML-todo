@@ -2,25 +2,34 @@
 
 type state = {
     count: int,
+    newItem: string,
 };
 
 type action =
-  | Increment;  
+  | Increment
+  | AddItem;  
 
 let component = ReasonReact.reducerComponent("ToDoList");
 
 let str = ReasonReact.string;
 
+/* Increment the Timer Count */
+let incrementCount = (count) => {
+    count + 1
+};
+
 let make = (_children) => {
     ...component,
 
     initialState: () => {
-        count: 0
+        count: 0,
+        newItem: "Placeholder",
     },
 
     reducer: (action, state) => {
         switch (action) {
-        | Increment => ReasonReact.Update({ ...state, count: state.count + 1})
+        | Increment => ReasonReact.Update({ ...state, count: incrementCount(state.count)});
+        | AddItem => ReasonReact.Update({ ...state, newItem: "placeholder"})
         };
     },
 
