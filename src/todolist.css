@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-container {
+    height: 40vh;
+    width: 30vw;
+    background-color:gray;
+    border-radius: 15px;
+}
