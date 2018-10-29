@@ -11,6 +11,8 @@
     width: 30vw;
     background-color:gray;
     border-radius: 15px;
+    justify-content: center;
+    align-items: center;
 }
 
 .button {
@@ -18,4 +20,16 @@
     height: 45px;
     border: 1px solid black;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.button-text {
+    text-align: center;
+}
+.input-area {
+    display: flex;
+    flex-flow: row;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
