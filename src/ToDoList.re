@@ -22,7 +22,7 @@ let incrementCount = (count) => {
 
 /* Append an Item to the To Do List  */
 let appendItemToList = (currentList: list(string), item: string) => {
-    Js.log(str(item));
+    Js.log({str(item)});
    let updatedList = [ item , ...currentList];
    updatedList;
 };
@@ -55,10 +55,13 @@ let make = (_children) => {
                         value=(_self.state.newItem) 
                         target="newItem"
                         name="newItem" 
-                        onChange=(_event => _self.send(SetNewItem(ReactEvent.Form.target(_event)##newItem))) />
+                        onChange=(_event => _self.send(SetNewItem(ReactEvent.Form.target(_event)##value))) />
                 </form>
                     <button onClick=(_event => _self.send(AddItem))>(str("Set Item"))</button>
                 </div>
+                <p>(str("New Item in State"))</p>
+                <p>(str(_self.state.newItem))</p>
+                <p>(str("Count in State"))</p>
                 <p>(str(string_of_int(_self.state.count)))</p>
                 <div onClick=(_event => _self.send(Increment)) className="button">
                     <p className="button-text">(str("Increment Count"))</p>
