@@ -1,18 +1,17 @@
 [%bs.raw {|require('./todolist.css')|}];
 
-/* module TodoItem = {
+module TodoItem = {
     let component = ReasonReact.statelessComponent("TodoItem");
 
     let make = (~item, children) => {
         ...component,
         render: (_self) => {
             <div>
-                <p>(str(item))<p>
+                <p>(item)</p>
             </div>
         }
     }
-}; */
-
+};
 
 /*
     Start main Component Here
@@ -57,6 +56,7 @@ let make = (_children) => {
 
     render: _self => {
     let listLength = List.length(_self.state.items);
+       <div>
         <div className="container">
             <div className="list-container">
                 <p>(str("Testing the Container"))</p>
@@ -75,6 +75,13 @@ let make = (_children) => {
                 <p>(str(_self.state.newItem))</p>
                 <p>(str("Count in State"))</p>
                 <p>(str(string_of_int(_self.state.count)))</p>
+                /* <div>
+                    (
+                        ReasonReact.array(Array.of_list(
+                            List.map(items => <TodoItem item/>)
+                        ))
+                    )
+                </div> */
                 <div>
                     <h4>(str("Items in List " ++ string_of_int(listLength)))</h4>
                 </div>
@@ -87,6 +94,8 @@ let make = (_children) => {
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+        <Footer/>
+       </div>
     }
 };
