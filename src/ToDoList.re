@@ -75,13 +75,13 @@ let make = (_children) => {
                 <p>(str(_self.state.newItem))</p>
                 <p>(str("Count in State"))</p>
                 <p>(str(string_of_int(_self.state.count)))</p>
-                /* <div>
-                    (
-                        ReasonReact.array(Array.of_list(
-                            List.map(items => <TodoItem item/>)
-                        ))
+                <div>(
+                    _self.state.items
+                        ->Belt.List.map((item) => <p>(str(item))</p>)
+                        ->Belt.List.toArray
+                        ->ReasonReact.array
                     )
-                </div> */
+                </div>
                 <div>
                     <h4>(str("Items in List " ++ string_of_int(listLength)))</h4>
                 </div>
