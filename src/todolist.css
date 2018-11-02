@@ -43,3 +43,22 @@
     justify-content: space-evenly;
     align-content: space-evenly;
 }
+.item-row {
+    display: flex;
+    width: 50vw;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    margin-left: 5%;
+    margin-right: 15%;
+}
+.item-title-padding {
+    padding-right: 5vw;
+}
+ .empty-list {
+     padding-top: 40%;
+     padding-bottom: 40%;
+     justify-content: center;
+     align-items: center;
+ }
