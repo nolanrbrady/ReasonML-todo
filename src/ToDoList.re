@@ -51,7 +51,7 @@ let make = (_children) => {
        <div>
         <div className="container">
             <div className="list-container">
-                <p>(str("Testing the Container"))</p>
+                <h3>(str("To Do Items"))</h3>
                 <div className="input-area">
                 <form>
                     <input 
@@ -63,8 +63,6 @@ let make = (_children) => {
                         onChange=(_event => _self.send(SetNewItem(ReactEvent.Form.target(_event)##value))) />
                 </form>
                 </div>
-                <p>(str("New Item in State"))</p>
-                <p>(str(_self.state.newItem))</p>
                 <div>(renderList(_self.state.items))</div>
                 <div>
                     <h4>(str("Items in List " ++ string_of_int(listLength)))</h4>
@@ -79,7 +77,7 @@ let make = (_children) => {
                 </div>
             </div>
             </div>
-        <Footer/>
+        <Footer item=(string_of_int(listLength))/>
        </div>
     }
 };
